@@ -1,0 +1,130 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    margin-top: 30px;
+}
+
+/* Logo */
+.small-logo {
+    width: 200px;  /* Increased the logo size a bit more */
+    display: block;
+    margin: 10px auto;
+}
+
+/* Buttons */
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Back Button */
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: gray;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.back-button:hover {
+    background-color: darkgray;
+}
+
+/* Forms */
+form {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+input[type="text"],
+input[type="date"] {
+    width: 80%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Attendance List */
+.attendance-list {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Attendance Item (Names & Checkboxes in One Line) */
+.attendance-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    background: #f1f1f1;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+/* Student Name */
+.student-name {
+    font-weight: bold;
+    text-align: left;
+    flex-grow: 1; /* Ensures names stay aligned */
+}
+
+/* Checkbox Column (Aligned in One Line) */
+.checkbox-container {
+    width: 50px; /* Fixed width to align checkboxes */
+    text-align: right;
+}
+
+/* Blue Checkbox */
+input[type="checkbox"] {
+    accent-color: blue;
+    transform: scale(1.2);
+}
+
+/* Table */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+td.bold {
+    font-weight: bold;
+}

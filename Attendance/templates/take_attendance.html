@@ -1,0 +1,32 @@
+{% include 'base.html' %}
+
+<!-- Display flashed messages -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul>
+            {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+
+<form action="/take_attendance" method="POST">
+    <label>Select Date:</label>
+    <input type="date" name="date" value="{{ selected_date }}" required>
+    <br><br>
+
+    <h3>Mark Attendance</h3>
+    <div class="attendance-list">
+        {% for student in students %}
+        <div class="attendance-item">
+            <span class="student-name">{{ student[1] }}</span>
+            <input type="checkbox" name="students" value="{{ student[0] }}"
+                {% if student[0] in attendance_records and attendance_records[student[0]] == 'Present' %}checked{% endif %}>
+        </div>
+        {% endfor %}
+    </div>
+
+    <button type="submit">Save</button>
+    <a href="/" class="back-button">Back</a>
+</form>

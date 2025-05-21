@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Attendance Management System</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        .flash-message {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 16px;
+            z-index: 1000;
+            display: none;
+        }
+        .flash-message button {
+            margin-left: 15px;
+            padding: 5px 10px;
+            background-color: black;  /* Black button */
+            color: white;  /* White text */
+            border: none;
+            cursor: pointer;
+        }
+        .flash-message button:hover {
+            background-color: #333;  /* Darker black for hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- Flash message container -->
+    <div class="flash-message" id="flashMessage"></div>
+
+    <div class="container">
+        <img src="/static/logo.jpg" alt="Logo" class="small-logo">
+        <h1>Attendance Management System</h1>
+        <a href="/add_student"><button>Add Student</button></a>
+        <a href="/take_attendance"><button>Take Attendance</button></a>
+        <a href="/view_attendance"><button>See Attendance</button></a>
+    </div>
+
+    <!-- Flash message handling JavaScript -->
+    <script>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            // Show the flash message at the top of the page
+            var flashMessage = document.getElementById('flashMessage');
+            flashMessage.textContent = "{{ messages[0] }}";  // Get the first message
+
+            // Show the flash message
+            flashMessage.style.display = "block";
+
+            // Create an OK button to hide the message
+            var okButton = document.createElement('button');
+            okButton.textContent = "OK";
+            okButton.onclick = function() {
+                flashMessage.style.display = "none";
+            };
+
+            flashMessage.appendChild(okButton);
+        {% endif %}
+        {% endwith %}
+    </script>
+</body>
+</html>
